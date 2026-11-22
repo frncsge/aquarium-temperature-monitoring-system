@@ -1,6 +1,6 @@
 {
   "expo": {
-    "shceme": "aquariumtempmonitapp",
+    "scheme": "aquariumtempmonitapp",
     "experiments": {
       "typedRoutes": true
     },
