@@ -45,7 +45,7 @@ const Home = () => {
         <View style={styles.body}>
           {aquariums.map((aquarium) => {
             return (
-              <View style={styles.card}>
+              <View style={styles.card} key={aquarium.id}>
                 <View>
                   <Text style={styles.aquariumName}>{aquarium.name}</Text>
                   <Text style={styles.timeMeasured}>9:22PM</Text>
