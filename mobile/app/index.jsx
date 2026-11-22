@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "../styles/home.styles.js";
 import happyFish from "../assets/IMG_1654.jpg";
 import sadFish from "../assets/IMG_1655.jpg";
+import AppHeader from "../components/AppHeader.jsx";
 
 const Home = () => {
   const [aquariums, setAquariums] = useState([]);
@@ -29,10 +30,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.logo}>Fishball App</Text>
-        <Image source={happyFish} style={{ width: 40, height: 40 }}></Image>
-      </View>
+      <AppHeader image={happyFish} />
 
       {loading ? (
         <View style={styles.noData}>

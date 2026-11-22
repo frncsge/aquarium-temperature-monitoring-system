@@ -11,21 +11,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  header: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 3,
-
-    padding: 15,
-  },
-
-  logo: {
-    fontSize: 20,
-    color: colors.primaryColor,
-    fontWeight: "bold",
-  },
-
   body: {
     flex: 1,
     paddingHorizontal: 15,
