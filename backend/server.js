@@ -1,8 +1,11 @@
+import "dotenv/config";
 import express from "express";
+import aquariumsRoutes from "./routes/aquariums.js";
 
 const app = express();
-
 app.use(express.json());
+
+app.use("/api/aquariums", aquariumsRoutes);
 
 app.post("/api/temperature", (req, res) => {
   const { temperature } = req.body;
