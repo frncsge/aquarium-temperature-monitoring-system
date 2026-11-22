@@ -4,7 +4,7 @@
     "experiments": {
       "typedRoutes": true
     },
-    "name": "mobile",
+    "name": "aquarium-temparature-monitoring-app",
     "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
