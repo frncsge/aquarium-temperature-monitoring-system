@@ -58,6 +58,10 @@ const styles = StyleSheet.create({
   tempTxt: {
     fontSize: 40,
   },
+
+  scrollView: {
+    flex: 1,
+  },
 });
 
 export default styles;

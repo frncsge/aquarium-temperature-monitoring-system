@@ -1,10 +1,10 @@
 {
   "expo": {
-    "scheme": "aquariumtempmonitapp",
+    "scheme": "fishballapp",
     "experiments": {
       "typedRoutes": true
     },
-    "name": "aquarium-temparature-monitoring-app",
+    "name": "fishball-app",
     "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
