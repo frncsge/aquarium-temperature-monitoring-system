@@ -1,21 +1,17 @@
-import supabase from "../config/supabase.js";
+import { supabase } from "../config/supabase.js";
 
 export const authenticateUser = async (req, res, next) => {
-  try {
-    const [scheme, token] = req.headers.authorization?.split(" ") ?? [];
+  const [scheme, token] = req.headers.authorization?.split(" ") ?? [];
 
-    if (scheme !== "Bearer" || !token)
-      return res.status(401).json({ error: "Authorization token is missing." });
+  if (scheme !== "Bearer" || !token)
+    return res.status(401).json({ error: "Authorization token is missing." });
 
-    const { data, error } = await supabase.auth.getUser(token);
+  const { data, error } = await supabase.auth.getUser(token);
 
-    if (error || !data.user)
-      return res.status(401).json({ error: "Unauthorized" });
+  if (error || !data.user)
+    return res.status(401).json({ error: "Unauthorized" });
 
-    req.user = data.user;
-  } catch (error) {
-    return res.status(500).json({ error: `Server error: ${error.message}` });
-  }
+  req.user = data.user;
 
   next();
 };

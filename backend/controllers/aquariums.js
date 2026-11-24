@@ -1,8 +1,13 @@
-import supabase from "../config/supabase.js";
+import { supabase } from "../config/supabase.js";
 import { cleanString } from "../utils/strings.js";
 
 export const getAquariums = async (req, res) => {
-  const { data, error } = await supabase.from("aquariums").select();
+  const { id } = req.user;
+
+  const { data, error } = await supabase
+    .from("aquariums")
+    .select()
+    .eq("user_id", id);
 
   if (error) return res.status(500).json({ error: error.message });
 
@@ -10,6 +15,7 @@ export const getAquariums = async (req, res) => {
 };
 
 export const createAquarium = async (req, res) => {
+  const { id } = req.user;
   const { name, description, sensorCode } = req.body;
 
   const clean = {
@@ -31,6 +37,7 @@ export const createAquarium = async (req, res) => {
       sensor_code: clean.sensorCode,
     })
     .select()
+    .eq("user_id", id)
     .single();
 
   if (error) return res.status(500).json({ error: error.message });
