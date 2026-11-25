@@ -1,10 +1,5 @@
 import { StyleSheet } from "react-native";
-
-const colors = {
-  primaryColor: "#FFB6C1",
-  cardColor: "#F0F0F0",
-  mutedColor: "#6B7280",
-};
+import colors from "./colors.js";
 
 const styles = StyleSheet.create({
   container: {
